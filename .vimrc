@@ -11,6 +11,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=5
+command NE NERDTree
 imap jk <Esc>
 let delimitMate_expand_cr=1
 if exists('$TMUX')

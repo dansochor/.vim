@@ -11,7 +11,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=5
-command NE NERDTree
+command NE NERDTree<bar>NERDTreeTabsOpen
 imap jk <Esc>
 let delimitMate_expand_cr=1
 if exists('$TMUX')
@@ -24,3 +24,4 @@ endif
 
 "vim tips:
 "   "+y to copy to keyboard
+"   gt: next tab, gT: prev tab

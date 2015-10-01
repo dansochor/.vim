@@ -7,6 +7,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype on
 set term=screen-256color

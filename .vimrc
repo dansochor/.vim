@@ -1,8 +1,17 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Raimondi/delimitMate'
+Bundle 'jistr/vim-nerdtree-tabs'
+call vundle#end()
+filetype on
 set term=screen-256color
 syntax enable
 set number
-set nocompatible
 filetype plugin indent on
 set background=dark
 colorscheme eighties

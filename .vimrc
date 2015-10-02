@@ -21,6 +21,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=5
+autocmd Filetype python setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 command NE NERDTree<bar>NERDTreeTabsOpen
 imap jk <Esc>
 let delimitMate_expand_cr=1

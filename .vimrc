@@ -7,7 +7,11 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Bundle 'jistr/vim-nerdtree-tabs'
+" To Compile, 
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.py (--clang-completer)
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
 filetype on
 set term=screen-256color

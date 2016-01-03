@@ -11,6 +11,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py (--clang-completer)
 Plugin 'Valloric/YouCompleteMe'
+" YcmGenerateConfig in root Makefile dir
 Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
 filetype on

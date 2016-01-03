@@ -20,6 +20,8 @@ syntax enable
 set number
 filetype plugin indent on
 set background=dark
+hi YcmErrorSection cterm=NONE
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 colorscheme eighties
 set grepprg=grep\ -nH\ $*
 set tabstop=4

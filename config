@@ -43,6 +43,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Airline!
 Plugin 'vim-airline/vim-airline'
 
+Plugin 'vim-airline/vim-airline-themes'
+
 " File tree
 Plugin 'scrooloose/nerdtree'
 
@@ -56,6 +58,9 @@ Plugin 'kien/ctrlp.vim'
 
 " Support for easily toggling comments.
 Plugin 'tpope/vim-commentary'
+
+" DelimitMate
+Plugin 'Raimondi/delimitMate'
 
 " In addtion to the above plugins, you'll likely need some for individual
 " non-standard syntaxes that aren't pre-bundled with vim. Here are some I use,
@@ -85,6 +90,7 @@ set smarttab " let's tab key insert 'tab stops', and bksp deletes tabs.
 set shiftround " tab / shifting moves to closest tabstop.
 set autoindent " Match indents on new lines.
 set smartindent " Intellegently dedent / indent new lines based on rules.
+set number " Add line numbers.
 
 " We have VCS -- we don't need this stuff.
 set nobackup " We have vcs, we don't need backups.
@@ -161,9 +167,14 @@ let g:ctrlp_max_height = 30
 
 " Make backspace work like in most other programs:
 set backspace=indent,eol,start
+let delimitMate_expand_cr=1
 
 " Map NE to NerdTree
-command NE NERDTree<bar>NERDTreeTabsOpen
+noremap <c-n> :NERDTreeTabsToggle<CR>
+" NERDTree opens automatically when no files are specified.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 
 " Finally the color scheme. Choose whichever you want from the list in the
 " link above (back up where we included the bundle of a ton of themes.)
@@ -171,3 +182,5 @@ set term=screen-256color
 let base16colorspace=256
 colorscheme base16-eighties
 set background=dark
+let g:airline_theme='base16'
+set laststatus=2

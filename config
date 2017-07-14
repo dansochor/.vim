@@ -1,5 +1,6 @@
 " Beginners .vimrc
 " v0.1 2012-10-22 Philip Thrasher
+" v0.2 2017-06-30 Daniel Sochor
 "
 " Important things for beginners:
 " * Start out small... Don't jam your vimrc full of things you're not ready to
@@ -40,6 +41,12 @@ call vundle#begin()
 " Let vundle manage itself:
 Plugin 'VundleVim/Vundle.vim'
 
+" Syntax checking
+" To Compile,
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.py (--clang-completer)"
+Plugin 'Valloric/YouCompleteMe'
+
 " Airline!
 Plugin 'vim-airline/vim-airline'
 
@@ -50,7 +57,7 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'jistr/vim-nerdtree-tabs'
 
-" Just a shitload of color schemes.
+" Just color schemes.
 Plugin 'chriskempson/base16-vim'
 
 " Fuzzy finder -- absolutely must have.
@@ -116,6 +123,8 @@ set virtualedit+=block
 " You'll see it a lot below as <leader>
 let mapleader = ","
 
+" Vim automatically changes directories to the current one.
+set autochdir
 
 " So we don't have to press shift when we want to get into command mode.
 nnoremap ; :
@@ -132,10 +141,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Use sane regex's when searching
-nnoremap / /\v
-vnoremap / /\v
 
 " Clear match highlighting
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
@@ -165,16 +170,21 @@ let g:ctrlp_map = '<c-t>'
 " Let ctrlp have up to 30 results.
 let g:ctrlp_max_height = 30
 
+" Let ctrlp show hidden files, duh.
+let g:ctrlp_show_hidden = 1
+
 " Make backspace work like in most other programs:
 set backspace=indent,eol,start
 let delimitMate_expand_cr=1
+au FileType java let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 " Map NE to NerdTree
 noremap <c-n> :NERDTreeTabsToggle<CR>
-" NERDTree opens automatically when no files are specified.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
 
+" YCM Configuration
+hi YcmErrorSection cterm=NONE
+set completeopt-=preview
 
 " Finally the color scheme. Choose whichever you want from the list in the
 " link above (back up where we included the bundle of a ton of themes.)
@@ -182,5 +192,10 @@ set term=screen-256color
 let base16colorspace=256
 colorscheme base16-eighties
 set background=dark
+
+" Some Airline settings
 let g:airline_theme='base16'
 set laststatus=2
+
+" Force vim to always have 5 lines below cursor
+set scrolloff=5

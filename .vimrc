@@ -57,6 +57,9 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'jistr/vim-nerdtree-tabs'
 
+" No indent when pasting
+Plugin 'ConradIrwin/vim-bracketed-paste'
+
 " Just color schemes.
 Plugin 'chriskempson/base16-vim'
 

@@ -103,8 +103,6 @@ set smartindent " Intellegently dedent / indent new lines based on rules.
 set number " Add line numbers.
 
 " We have VCS -- we don't need this stuff.
-set nobackup " We have vcs, we don't need backups.
-set nowritebackup " We have vcs, we don't need backups.
 set noswapfile " They're just annoying. Who likes them?
 
 " don't nag me when hiding buffers
